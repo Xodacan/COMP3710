@@ -1,2 +1,2 @@
-# COMP3710
+# COMP3710 not new
 Pattern recognition
