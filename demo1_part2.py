@@ -4,10 +4,16 @@ import matplotlib.pyplot as plt
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-Y, X = np.mgrid[-0.5:-0.2:0.0001, -1.5:-1.2:0.0001]
+Y, X = np.mgrid[-1.3:1.3:0.005, -2:1:0.005]
 
 x = torch.Tensor(X)
 y = torch.Tensor(Y)
+
+scaling_factor = 0.4
+scale = 1
+x = (x * scaling_factor) - scale
+y = (y * scaling_factor) 
+
 z = torch.complex(x, y) #important! 
 zs = z.clone() #Updated!
 ns = torch.zeros_like(z)
